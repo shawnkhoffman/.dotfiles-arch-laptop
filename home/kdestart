@@ -1,0 +1,4 @@
+#!/bin/bash
+export DESKTOP_SESSION=plasma
+export KDEWM=/usr/local/bin/dwm
+exec /usr/bin/startplasma-x11

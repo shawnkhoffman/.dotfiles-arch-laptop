@@ -1,0 +1,30 @@
+#  General
+# for ZSH
+case "$OSTYPE" in
+  darwin*)
+    alias ls='ls -G'
+  ;;
+  linux*)
+    alias ls='ls --color=auto'
+  ;;
+  dragonfly*|freebsd*|netbsd*|openbsd*)
+    # ...
+  ;;
+esac
+alias tmux='tmux -u'
+
+# Color
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+# Shortcuts
+alias startwin="sudo virsh start win11"
+alias stopwin="sudo virsh shutdown win11"
+# Git aliases
+alias lg="lazygit"
+alias g="git"
+alias gs="git status"
+alias gp="git pull"
+alias gP="git push"
+# alias gac="git add .; git commit -m '$1'"
+gac() { git add .; git commit -m "$*" }
+gacp() { git add .; git commit -m "$*"; git push }

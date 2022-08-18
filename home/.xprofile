@@ -1,0 +1,22 @@
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+prime-offload
+xrandr --dpi 220
+picom --experimental-backends &
+light-locker &
+nitrogen --restore &
+dunst &
+slstatus &
+nm-applet &
+blueman-applet &
+pa-applet &
+cbatticon 0 &
+batsignal &
+clight &
+clight-gui --tray &
+expressvpn-gui &
+protonmail-bridge --no-window &
+thunderbird &
+birdtray &
+alacritty &
+alacritty -e btop &
