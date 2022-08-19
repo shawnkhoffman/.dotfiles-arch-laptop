@@ -1,12 +1,28 @@
 #!/bin/bash
 
+echo; echo "Checking for dependencies..."
+echo "Checking for stow..."
+if ! command -v stow &> /dev/null; then
+    echo "Stow not found! Please install it and try again."
+    exit 1
+fi
+
+clear
+
 PS3="Enter a number: "
-echo; echo "What do you want to do?"
-select choice in "Install" "Uninstall" "Quit"; do
-    if [ $choice == "Install" ]; then
+
+echo "Obi Shawn Kenobi's"; echo "Arch Linux laptop dotfiles"
+echo "https://github.com/shawnkhoffman"
+echo "================================="
+echo $(basename "$0")
+echo "This script will allow you to install dotfiles."; echo
+
+echo "Are you installing or uninstalling dotfiles?"
+select choice in "Installing" "Uninstalling" "Quit"; do
+    if [ $choice == "Installing" ]; then
         operation="install"
         break
-    elif [ $choice == "Uninstall" ]; then
+    elif [ $choice == "Uninstalling" ]; then
         operation="uninstall"
         break
     elif [ "$choice" == "Quit" ]; then
@@ -34,7 +50,7 @@ if [ $choice != "Quit" ]; then
         fi
     }
 
-    echo; echo "Which configs do you want to $operation?"
+    echo; echo "Which dotfiles do you want to $operation?"
     select config in "*All configs*" $configs "Quit"; do
         if [ "$config" == "*All configs*" ]; then
             for config in $configs; do

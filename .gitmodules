@@ -10,6 +10,3 @@
 [submodule "zsh/powerlevel10k"]
 	path = zsh/powerlevel10k
 	url = git@github.com:romkatv/powerlevel10k.git
-[submodule "home/wallpapers-4k"]
-	path = home/wallpapers-4k
-	url = git@github.com:shawnkhoffman/wallpapers-4k.git
