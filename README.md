@@ -4,14 +4,17 @@ The term "dotfiles" refers to a user's personal configurations to various progra
 
 ## Table of Contents
 
-- [.dotfiles (Arch Linux Laptop)](#dotfiles-arch-linux-laptop)
+- [.dotfiles (Arch Linux Laptop)](#dotfiles--arch-linux-laptop-)
+  - [Start Here](#start-here)
   - [Initial Setup](#initial-setup)
-  - [Installing/Uninstalling Configs](#installinguninstalling-configs)
-  - [Packages](#packages)
+    - [Automatic](#automatic)
+    - [Manual](#manual)
+  - [Installing/Uninstalling dotfiles](#installing-uninstalling-dotfiles)
+  - [Installing Packages](#installing-packages)
 
 ---
 
-## Initial Setup
+## Start Here
 
 This installation method intelligently makes use of [GNU Stow](https://www.gnu.org/software/stow/), which is required for installation. If you do not already have this package, install it.
 
@@ -34,19 +37,39 @@ git clone git@github.com:shawnkhoffman/.dotfiles-arch-laptop.git
 cd .dotfiles-arch-laptop
 ```
 
-Then initialize the git submodules from within the root of the repo.
+## Initial Setup
+
+### Automatic
+
+Simply run the [setup.sh](/setup.sh) script and follow the instructions at the prompt.
+
+You will first be asked if you want to initialize the submodules for this repo. This is a prerequisite for installing most of the dotfiles.
+
+You will then have the option to download the [4K wallpapers](https://github.com/shawnkhoffman/wallpapers-4k) which will then be added to your dotfiles if you install them for the home directory in the next step.
+
+Once the initial setup is complete, it will give you the option of automatically starting the installer script ([installer.sh](/installer.sh)).
+
+### Manual
+
+Initialize the git submodules from within the root of the repo.
 
 ```bash
 git submodule update --init --recursive
 ```
 
-## Installing/Uninstalling Configs
+If you want the [4K wallpapers](https://github.com/shawnkhoffman/wallpapers-4k), add it as a submodule from within the root of the repo.
 
-Installing/uninstalling is a very straightforward process; simply execute the [installer.sh](/installer.sh) script and follow the instructions at the prompt.
+```bash
+git submodule add git@github.com:shawnkhoffman/wallpapers-4k.git home/wallpapers-4k
+```
+
+## Installing/Uninstalling dotfiles
+
+After the initial setup is complete, installing/uninstalling is a very straightforward process; simply execute the [installer.sh](/installer.sh) script and follow the instructions at the prompt.
 
 ---
 
-## Packages
+## Installing Packages
 
 The [/packages](/packages) directory contains two lists of all the packages that I use on my Arch Linux laptop.
 
