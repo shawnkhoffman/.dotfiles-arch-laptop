@@ -1,6 +1,6 @@
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
-prime-offload
+prime-offload &
 xrandr --dpi 220
 picom --experimental-backends &
 light-locker &
